@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Library</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color:white;
+    }
+
+    header {
+      background-color: blue;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #26ab9e;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #777;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>College Library</h1>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showDepartment('computer')">Computer Science</a>
+    <a href="#" onclick="showDepartment('biology')">Biology</a>
+    <a href="#" onclick="showDepartment('math')">Mathematics</a>
+    
+  </nav>
+
+  <section id="computer" style="display: none;">
+    <h2></h2>
+    <p>Explore our collection of Computer Science textbooks:</p>
+    <ul>
+      <li>1. "Introduction to Algorithms" by Thomas H. Cormen
+        <src="https://introcs.cs.princeton.edu/java/home/" >
+      </li>
+      <li>2. "Clean Code: A Handbook of Agile Software Craftsmanship" by Robert C. Martin</li>
+      <li>3. "Database Management Systems" by Raghu Ramakrishnan and Johannes Gehrke</li>
+    </ul>
+    
+  </section>
+
+  <section id="biology" style="display: none;">
+    <h2>Biology Department</h2>
+   <p>Discover our Biology textbook collection:</p>
+    <ul>
+      <li>1. "Biology: Concepts and Connections" by Neil A. Campbell</li>
+      <li>2. "Molecular Biology of the Cell" by Bruce Alberts</li>
+      <li>3. "Ecology: Concepts and Applications" by Manuel C. Molles Jr.</li>
+    </ul>
+    
+  </section>
+
+  <section id="math" style="display: none;">
+    <p>Check out our Mathematics textbooks:</p>
+    <ul>
+      <li>1. "Calculus" by James Stewart</li>
+      <li>2. "Linear Algebra and Its Applications" by David C. Lay</li>
+      <li>3. "Discrete Mathematics and its Applications" by Kenneth H. Rosen</li>
+    </ul>
+    
+  </section>
+
+  
+
+  <footer>
+    <p>&copy; 2024 College Library</p>
+  </footer>
+
+  <script>
+    function showDepartment(department) {
+      
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+
+      
+      const selectedDepartment = document.getElementById(department);
+      if (selectedDepartment) {
+        selectedDepartment.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
